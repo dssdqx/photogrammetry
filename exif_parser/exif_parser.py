@@ -141,5 +141,3 @@ else:
 
 
 
-#exif_parser('c:\\MAPS\\thousand-hills-company\\heritage-walk-phase-ii\\2023-12-29\\')
-
