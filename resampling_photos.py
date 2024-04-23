@@ -61,7 +61,7 @@ else:
 
 def resampling(photo: str, name: str):
     image = Image.open(photo)
-    #print(f"Original size : {image.size}")  # 9504, 6336
+    #print(f"Original size : {image.size}")  
     tmp_resized = image.resize((6336, 4224), resample = Image.LANCZOS)
     exif = image.getexif()
     tmp_resized.save(f'{src}{name}', quality=90, exif=exif)
