@@ -59,9 +59,6 @@ else:
         sys.exit()
 
 
-
-print('\n')
-
 def resampling(photo: str, name: str):
     image = Image.open(photo)
     #print(f"Original size : {image.size}")  # 9504, 6336
@@ -75,7 +72,6 @@ threads = []
 bar = IncrementalBar('processing resize...', max = len(fileList))
 
 while fileList:
-    # Извлекаем файлы для текущего набора потоков
     files_for_thread = fileList[:num_threads]
     fileList = fileList[num_threads:]
 
@@ -86,9 +82,7 @@ while fileList:
         threads.append(thread)
         bar.next()
 
-    # Ждем завершения всех потоков текущего набора
     for thread in threads:
-        #print(thread, 'done')
         thread.join()
     threads = []
 
